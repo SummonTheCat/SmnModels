@@ -3,51 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test01</title>
+    <title>SmnModels Demo</title>
     <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fdfdfd;
+        }
+
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .panel {
             width: 300px;
             height: 300px;
-            display: inline-block;
+            margin: 20px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: 0.3s ease;
         }
-    </style>
+
+        .header {
+            background-color: #f0f0f0;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .panel:hover {
+            transform: scale(1.02);
+            box-shadow: 0 7px 7px rgba(0, 0, 0, 0.3);
+        }
+
+        .panel-clear {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .fullwidth {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        code {
+            display: block;
+            background-color: #f0f0f0;
+            font-size: 14px;
+            color: #333;
+            text-align: left
+            ;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        </style>
 </head>
 <body>
-    <div class="panel">
-        <model 
-        id="test-model-1" 
-        src="models/Test01.glb" 
-        behaviour="orbit 1 5" 
-        appearance="background-color:transparent; ambient-intensity:1;" 
-        scale="0.7"
-        rotation="45 45 0"
-        >
-            Model 1
-        </model>
-    </div>
-    
-    <div class="panel">
-        <model 
-        id="test-model-2" 
-        src="models/Test02.glb" 
-        behaviour="rotate -0.01"
-        >
-            Model 2
-        </model>
-    </div>
+    <div class="container">
+        <div class="fullwidth header">
+            <h1>- SmnModels Demo -</h1>
+        </div>
+        <div class="fullwidth">
+            <div class="panel-clear">
+                <model 
+                id="test-model-1" 
+                src="models/Test01.glb" 
+                behaviour="orbit 1 5" 
+                appearance="background-color:transparent; ambient-intensity:1;" 
+                scale="0.7"
+                rotation="45 45 0"
+                >
+                    Model 1
+                </model>
+                <p>Behaviour: Orbit </p>
+            </div>
+        </div>
+        <div class="fullwidth">
+            
 
-    <div class="panel">
-        <model 
-        id="test-model-3" 
-        src="models/Test01.glb" 
-        appearance="background-color:#660011; ambient-intensity:1;"
-        rotation="45 45 0"
-        scale="0.75"
-        >
-            Model 3
-        </model>
+            <div class="panel">
+                <model 
+                id="test-model-2" 
+                src="models/Test02.glb" 
+                behaviour="rotate -0.01"
+                >
+                    Model 2
+                </model>
+
+                <p>Behaviour: Rotate</p>
+            </div>
+
+            <div class="panel">
+                <model 
+                id="test-model-3" 
+                src="models/Test01.glb" 
+                appearance="background-color:#660011; ambient-intensity:1;"
+                rotation="45 45 0"
+                scale="0.75"
+                >
+                    Model 3
+                </model>
+                <p>Behaviour: None</p>
+            </div>
+        </div>
+        
+        <div class="fullwidth">
+            <a href="./js/smnmodel.bundle.js" download>
+                <button>Download SmnModel Library</button>
+            </a>
+        </div>
+
     </div>
-    
 
     <script type="module" src="./js/smnmodel.bundle.js"></script>
 </body>
