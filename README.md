@@ -10,16 +10,23 @@ SmnModels is a lightweight, web-based application designed for embedding interac
 
 ## Quick Start
 
-Clone the repository and start embedding 3D models in your web pages:
-
+Clone the repository and build or aquire the bundle:
 ```bash
 git clone https://github.com/yourusername/smnmodels.git
 cd smnmodels
+npm install
+npm run build
 ```
+
+Use dotnet for the sample host:
+```bash
+dotnet run
+```
+and visit 'http://localhost:5155/test01.html' to view the sample
 
 ## Usage Example
 
-To use SmnModels, simply include the model elements in your HTML as shown in the example below:
+To use SmnModels, include the bundled 'smnmodel.bundle.js' script at the end of your HTML and simply include the <model> elements in your HTML as shown in the example below:
 
 ```html
 <!DOCTYPE html>
@@ -64,6 +71,8 @@ This HTML file demonstrates the integration of multiple models with different be
 
 ## Dependencies
 
+- **Node.js:** For building the project.
+- **Dotnet:** For hosting the sample.
 - **Three.js:** For rendering 3D graphics.
 - **GLTFLoader & OrbitControls:** Essential for loading GLTF models and enabling user interactions.
 
