@@ -24,6 +24,10 @@ dotnet run
 ```
 and visit 'http://localhost:5155/test01.html' to view the sample
 
+To use SmnModels in your project, include the bundled 'smnmodel.bundle.js' script at the end of your HTML and include the <model> elements in your HTML:
+You can find the `smnmodel.bundle.js` file [here](./res/static/js/smnmodel.bundle.js).
+
+
 ## Usage Example
 
 To use SmnModels, include the bundled 'smnmodel.bundle.js' script at the end of your HTML and simply include the <model> elements in your HTML as shown in the example below:
